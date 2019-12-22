@@ -1,0 +1,8 @@
+<input *ngIf="typeOfDate === 'dateFrom'" type="date"
+       [(ngModel)]="dateFrom"
+       (input)="selectDate($event.target.value)"
+       required>
+<input *ngIf="typeOfDate === 'dateTo'" type="date"
+       [(ngModel)]="dateTo"
+       (input)="selectDate($event.target.value)"
+       required>

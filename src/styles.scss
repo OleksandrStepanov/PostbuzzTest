@@ -1,0 +1,292 @@
+/* You can add global styles to this file, and also import other style files */
+$color-black: #000;
+$color-white: #fff;
+$color-light-white: rgba( 255, 255, 255, 0.7);
+$color-red: red;
+$ryanair-blue: #2b4779;
+$ryanair-light-blue: rgba(30, 138, 223, 0.7);
+$ryanair-yellow: #F1C933;
+$main-font: 'Roboto', sans-serif;
+
+.searchInputBlock {
+  display: inline-flex;
+  vertical-align: middle;
+  position:relative;
+  margin-right: 5px;
+  input {
+    background-color: $color-white;
+    width: 169px;
+    height: 40.5px;
+    padding: 3px;
+    font-size: 14px;
+    display: inline-flex;
+    border: 1px solid $color-white;
+    color: $ryanair-blue;
+    vertical-align: top;
+    &:active,
+    &:focus {
+      border-bottom: 3px solid $ryanair-blue;
+      border-right: 0;
+      border-left: 0;
+      width: 170px;
+      height: 39.5px;
+      padding-left: 4px;
+      padding-bottom: 2px;
+      color: $ryanair-blue;
+    }
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &:-moz-placeholder { /* Chrome/Opera/Safari */
+      color: $ryanair-blue;
+      font-size: 12px;
+    }
+  }
+  .alert {
+    position: absolute;
+    color: $ryanair-blue;
+    top: 49px;
+    left: 0px;
+    padding: 0;
+    width: 95.5%;
+    padding: 5px;
+    background-color: $ryanair-yellow;
+    text-align: center;
+  }
+  ul.listGroup {
+    margin-left: -40px;
+    position: absolute;
+    background: $ryanair-blue;
+    color: $color-white;
+    top: 35px;
+    left: 40px;
+    padding: 0;
+    width: 100%;
+    z-index: 100;
+    max-height: 350px;
+    overflow: auto;
+    li {
+      list-style-type: none;
+      padding: 5px 0 5px 40px;
+      &:hover {
+        cursor: pointer;
+        background-color: $ryanair-yellow;
+        color: $ryanair-blue;
+      }
+    }
+  }
+}
+.searchInputBlock.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+@media screen and (min-width: 0px) and (max-width: 375px) {
+  .searchInputBlock {
+    input {
+      width: 236px;
+      &:active,
+      &:focus {
+        width: 237px;
+      }
+    }
+    .alert {
+      left: 1px;
+      width: 272px;
+      z-index: 200;
+    }
+    ul.listGroup {
+      z-index: 300;
+      li {
+        padding: 5px 0 5px 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  .searchInputBlock {
+    input {
+      width: 86%;
+      &:active,
+      &:focus {
+        width: 86%;
+      }
+    }
+    .alert {
+      position: relative;
+      margin-left: 0;
+      display: block;
+      top: inherit;
+      left: inherit;
+    }
+    ul.listGroup {
+      z-index: 300;
+      width: 98%;
+      left: 45px;
+      li {
+        padding: 5px 0 5px 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .searchInputBlock {
+    margin-bottom: 5px;
+    input {
+      width: 294px;
+      &:active,
+      &:focus {
+        width: 295px;
+      }
+    }
+    .alert {
+      z-index: 200;
+    }
+    ul.listGroup {
+      z-index: 300;
+    }
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1100px) {
+  .searchInputBlock {
+    input {
+      width: 149px;
+      &:active,
+      &:focus {
+        width: 150px;
+      }
+    }
+  }
+}
+.searchBlock {
+  background: $ryanair-light-blue;
+  color: $color-white;
+  font-size: 14px;
+  border: 2px solid $color-white;
+  margin: -2px 0 0 20px;
+  font-family: $main-font;
+  padding: 15px;
+  .submitButton {
+    background-color: $ryanair-yellow;
+    width: 150px;
+    height: 47px;
+    color: $color-white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0;
+    transition:all 0.3s ease;
+    font-family: $main-font;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $ryanair-blue;
+    }
+    &:disabled {
+      background-color: $color-red;
+      cursor: default;
+    }
+  }
+  .searchInputIcon,
+  .searchInputChange {
+    background-color: $ryanair-blue;
+    color: $color-white;
+    width: 35px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid $ryanair-blue;
+    padding-top: 17px;
+    margin-right: -3px;
+    vertical-align: top;
+  }
+  .searchInputIcon .fa {
+    margin-left: -3px;
+  }
+  .searchInputChange {
+    background: transparent;
+    color: $color-white;
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    transition:all 0.3s ease;
+    &:active,
+    &:focus,
+    &:hover {
+      color: $ryanair-yellow;
+    }
+  }
+  .arrivalIcon {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    margin-top: -2px;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 375px) {
+  .searchBlock {
+    margin: 0 auto;
+    width: 282px;
+    .searchInputBlock {
+      width: 100%;
+      display: block;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .submitButton {
+      width: 282px;
+    }
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  .searchBlock {
+    margin: 0 auto;
+    width: 90%;
+    .searchInputBlock {
+      width: 100%;
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+    .submitButton {
+      width: 98%;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .searchBlock {
+    .forTablet {
+      margin-right: 36px;
+    }
+    .forTabletButton {
+      width: 712px;
+      text-align: center;
+    }
+    .submitButton {
+      width: 100%;
+    }
+  }
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+img,
+input {
+  outline: none;
+}
+body {
+  background-image: url(/assets/images/background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: transparent;
+  font-family: $main-font;
+}
+.mat-sort-header-button p{
+  padding-left: 92px;
+  width: 100%;
+}

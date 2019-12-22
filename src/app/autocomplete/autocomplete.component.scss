@@ -1,0 +1,150 @@
+@import '../../styles';
+
+.searchInputBlock {
+  display: inline-flex;
+  vertical-align: middle;
+  position:relative;
+  input {
+    background-color: $color-white;
+    width: 169px;
+    height: 40.5px;
+    padding: 3px;
+    font-size: 14px;
+    display: inline-flex;
+    border: 1px solid $color-white;
+    color: $ryanair-blue;
+    vertical-align: top;
+    &:active,
+    &:focus {
+      border-bottom: 3px solid $ryanair-blue;
+      border-right: 0;
+      border-left: 0;
+      width: 170px;
+      height: 39.5px;
+      padding-left: 4px;
+      padding-bottom: 2px;
+      color: $ryanair-blue;
+    }
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &:-moz-placeholder { /* Chrome/Opera/Safari */
+      color: $ryanair-blue;
+      font-size: 12px;
+    }
+  }
+  .alert {
+    position: absolute;
+    color: $ryanair-blue;
+    top: 49px;
+    left: 0px;
+    padding: 0;
+    width: 95.5%;
+    padding: 5px;
+    background-color: $ryanair-yellow;
+    text-align: center;
+  }
+  ul.listGroup {
+    margin-left: -40px;
+    position: absolute;
+    background: $ryanair-blue;
+    color: $color-white;
+    top: 35px;
+    left: 40px;
+    padding: 0;
+    width: 100%;
+    z-index: 100;
+    max-height: 350px;
+    overflow: auto;
+    li {
+      list-style-type: none;
+      padding: 5px 0 5px 40px;
+      &:hover {
+        cursor: pointer;
+        background-color: $ryanair-yellow;
+        color: $ryanair-blue;
+      }
+    }
+  }
+}
+.searchInputBlock.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+@media screen and (min-width: 0px) and (max-width: 375px) {
+  .searchInputBlock {
+    input {
+      width: 236px;
+      &:active,
+      &:focus {
+        width: 237px;
+      }
+    }
+    .alert {
+      left: 1px;
+      width: 272px;
+      z-index: 200;
+    }
+    ul.listGroup {
+      z-index: 300;
+      li {
+        padding: 5px 0 5px 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  .searchInputBlock {
+    input {
+      width: 86%;
+      &:active,
+      &:focus {
+        width: 86%;
+      }
+    }
+    .alert {
+      position: relative;
+      margin-left: 0;
+      display: block;
+      top: inherit;
+      left: inherit;
+    }
+    ul.listGroup {
+      z-index: 300;
+      width: 98%;
+      left: 45px;
+      li {
+        padding: 5px 0 5px 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .searchInputBlock {
+    margin-bottom: 5px;
+    input {
+      width: 294px;
+      &:active,
+      &:focus {
+        width: 295px;
+      }
+    }
+    .alert {
+      z-index: 200;
+    }
+    ul.listGroup {
+      z-index: 300;
+    }
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1100px) {
+  .searchInputBlock {
+    input {
+      width: 149px;
+      &:active,
+      &:focus {
+        width: 150px;
+      }
+    }
+  }
+}

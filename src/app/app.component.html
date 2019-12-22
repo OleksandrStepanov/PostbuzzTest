@@ -1,0 +1,44 @@
+<div class="mainBody">
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/logo.jpg">
+      </div>
+      <div class="title">
+        Search cheap flights
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div class="searchBlock">
+        <form name="searchForm">
+          <app-search-wrapper>
+          </app-search-wrapper>
+          <app-date-wrapper>
+          </app-date-wrapper>
+          <div class="searchInputBlock forTabletButton">
+            <button type="submit"
+                    value="Submit"
+                    class="submitButton"
+                    [disabled]="!dateFrom && !dateTo"
+                    (click)="searchFlights()">
+              <i class="fa fa-search" aria-hidden="true"></i> Find flights
+            </button>
+          </div>
+        </form>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/images/footer-logo.png">
+      </div>
+      <div class="title">
+        <span> 2017 © Ryanair DAC. All rights reserved. </span>
+      </div>
+    </div>
+  </footer>
+</div>

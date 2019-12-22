@@ -1,0 +1,26 @@
+<div  class="searchInputBlock">
+  <div class="searchInputIcon">
+    <i class="fa fa-plane"
+       aria-hidden="true"></i>
+  </div>
+  <app-autocomplete (click)="changeDestinationType('origin')"></app-autocomplete>
+  <div class="alert"
+       *ngIf="!originCode">
+    Please, choose your departure
+  </div>
+</div>
+<div *ngIf="!changeDirection"  class="searchInputBlock"
+     [class.disabled]="!originCode && !destinationCode">
+</div>
+<div *ngIf="!changeDirection" class="searchInputBlock"
+     [class.disabled]="!originCode">
+  <div class="searchInputIcon">
+    <i class="fa fa-plane arrivalIcon"
+       aria-hidden="true"></i>
+  </div>
+  <app-autocomplete (click)="changeDestinationType('destination')"></app-autocomplete>
+  <div class="alert"
+       *ngIf="originCode && !destinationCode">
+    Please, choose your arrival
+  </div>
+</div>

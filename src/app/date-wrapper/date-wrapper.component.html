@@ -1,0 +1,18 @@
+<div class="searchInputBlock forTablet">
+  <div class="searchInputIcon">
+    <i class="fa fa-calendar"
+       aria-hidden="true"></i>
+  </div>
+  <app-date-selector [typeOfDate]="'dateFrom'"
+    (click)="changeDateType('dateFrom')">
+  </app-date-selector>
+</div>
+<div class="searchInputBlock">
+  <div class="searchInputIcon">
+    <i class="fa fa-calendar"
+       aria-hidden="true"></i>
+  </div>
+  <app-date-selector [typeOfDate]="'dateTo'"
+    (click)="changeDateType('dateTo')">
+  </app-date-selector>
+</div>

@@ -1,0 +1,26 @@
+<input *ngIf="inputType === 'origin'" type="text"
+       [(ngModel)]="airport"
+       (input)="filterAirports($event.target.value)"
+       (click)="onFocus()"
+       required>
+<ul class="listGroup" *ngIf="showList && inputType === 'origin'">
+  <li *ngFor="let airport of airports"
+      (click)="selectAirport(airport)">
+        <span>
+            {{airport.name}}
+        </span>
+  </li>
+</ul>
+<input *ngIf="inputType === 'destination'" type="text"
+       [(ngModel)]="airport"
+       (input)="filterAirports($event.target.value)"
+       (click)="onFocus()"
+       required>
+<ul class="listGroup" *ngIf="showList && inputType === 'destination'">
+  <li *ngFor="let airport of destinationAirports"
+      (click)="selectAirport(airport)">
+        <span>
+            {{airport.name}}
+        </span>
+  </li>
+</ul>

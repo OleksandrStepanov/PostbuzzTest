@@ -1,0 +1,69 @@
+<div class="flightResults">
+  <div class="flightResultsInfo">
+    <div class="flightResultsTitle">
+      <i class="fa fa-list-alt " aria-hidden="true"></i> Search Results
+    </div>
+    <p *ngIf="searchResults && !searchResults?.flights.length">No results found. Please try again.</p>
+  </div>
+  <div *ngIf="searchResults && searchResults?.flights.length">
+    <table class="searchInfo">
+      <tbody>
+      <tr>
+        <td>
+          <i class="fa fa-plane"
+             aria-hidden="true"></i> <span class="searchInfoTitle"> From: </span> <span class="parametr">{{queryParams.origin}}</span>
+        </td>
+        <td>
+          <i class="fa fa-plane arrivalIcon"
+             aria-hidden="true"></i> <span class="searchInfoTitle">To: </span><span class="parametr">{{queryParams.destination}}</span>
+        </td>
+        <td>
+          <i class="fa fa-arrow-up"
+             aria-hidden="true"></i> <span class="searchInfoTitle">Departure date: </span><span class="parametr">{{queryParams.from}}</span>
+        </td>
+        <td>
+          <i class="fa fa-arrow-down"
+             aria-hidden="true"></i> <span class="searchInfoTitle">Return date: </span> <span class="parametr">{{queryParams.to}}</span>
+        </td>
+      </tr>
+    </table>
+    <table matSort (matSortChange)="sortData($event)" class="searchDetails" *ngIf="searchResults?.flights.length">
+      <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th mat-sort-header="dateFrom">
+          <p>
+            <span class="searchInfoTitle"> Date from </span>
+          </p>
+        </th>
+        <th mat-sort-header="dateTo">
+          <p>
+            <span class="searchInfoTitle"> Date to </span>
+          </p>
+        </th>
+        <th mat-sort-header="price">
+          <p>
+             <span class="searchInfoTitle"> Price </span>
+          </p>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let result of sortedData, let i = index">
+        <td>{{i + 1}}.</td>
+        <td>
+          {{ result.dateFrom | date: 'dd.MM.yyyy' }}
+        </td>
+        <td>
+          {{ result.dateTo | date: 'dd.MM.yyyy' }}
+        </td>
+        <td>
+          {{ result.currency }} {{ result.price.toFixed(2) }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
